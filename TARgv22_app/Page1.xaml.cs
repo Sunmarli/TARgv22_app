@@ -50,5 +50,7 @@ namespace TARgv22_app
             Button btn = (Button)sender;
             await Navigation.PushAsync(pages[btn.TabIndex]);
         }
+
+
     }
 }       
