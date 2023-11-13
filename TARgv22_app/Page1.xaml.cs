@@ -14,17 +14,17 @@ namespace TARgv22_app
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page1 : ContentPage
     { List<ContentPage> pages = new List<ContentPage>()
-            { new EntryPage(),new BoxViewPage(), new TimerPage()
+            { new EntryPage(),new BoxViewPage(), new TimerPage(), new  DateTimePage(), new StepperSliderPage(),new Valgusfoor()
 
             };
-        List<string> teksts = new List<string>() { "Ava Entry leht", "Ava Box leht", "Ava Timer leht" };
+        List<string> teksts = new List<string>() { "Ava Entry leht", "Ava Box leht", "Ava Timer leht","Ava Datetimer", "Ava StepperSlider", "Ava Valgusfoor" };
         StackLayout st;
         public Page1()
         {
             st = new StackLayout
             {
                 Orientation = StackOrientation.Vertical,
-                BackgroundColor = Color.YellowGreen,
+                BackgroundColor = Color.LightGray,
             };
             for (int i = 0; i < pages.Count; i++)
             {
@@ -32,7 +32,7 @@ namespace TARgv22_app
                 {
                     Text = teksts[i],
                     TabIndex = i,
-                    BackgroundColor = Color.Red,
+                    BackgroundColor = Color.DarkRed,
                     TextColor = Color.White
                 };
 
