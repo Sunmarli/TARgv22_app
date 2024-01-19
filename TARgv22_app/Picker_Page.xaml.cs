@@ -78,6 +78,87 @@ namespace TARgv22_app
             //Content = sb;
         }
 
-       
+        private void Ent_Completed(object sender, EventArgs e)
+        {
+            if (webView != null)
+            {
+                st.Children.Remove(webView);
+            }
+            webView = new WebView
+            {
+                Source = new UrlWebViewSource { Url = ent.Text },
+                VerticalOptions = LayoutOptions.FillAndExpand,
+            };
+            st.Children.Add(webView);
+        }
+
+        private void Btn4_Clicked(object sender, EventArgs e)
+        {
+            if (webView.CanGoBack)
+            {
+                webView.GoForward();
+            }
+        }
+
+        public async void Btn3_Clicked(object sender, EventArgs e)
+        {
+            if (webView.CanGoBack)
+            {
+
+                webView.GoBack();
+            }
+        }
+
+        public async void Btn2_Clicked(object sender, EventArgs e)
+        {
+            if (webView != null)
+            {
+                st.Children.Remove(webView);
+            }
+            webView = new WebView
+            {
+                Source = new UrlWebViewSource { Url = "https://www.google.ee" },
+                VerticalOptions = LayoutOptions.FillAndExpand,
+            };
+            st.Children.Add(webView);
+        }
+
+        public async void Btn_Clicked(object sender, EventArgs e)
+        {
+            string site = await DisplayPromptAsync("Kakoi sait ti hotes?", "Napishi ego", initialValue: "https://", keyboard: Keyboard.Text);
+            lehed.Add(site);
+            string site2 = await DisplayPromptAsync("Kakoi sait ti hotes?", "Napishi ego nazanie", initialValue: "", keyboard: Keyboard.Text);
+            picker.Items.Add(site2);
+            if (webView != null)
+            {
+                st.Children.Remove(webView);
+            }
+            webView = new WebView
+            {
+                Source = new UrlWebViewSource { Url = site },
+                VerticalOptions = LayoutOptions.FillAndExpand,
+            };
+            st.Children.Add(webView);
+
+        }
+
+        private void Swipe_Swiped(object sender, SwipedEventArgs e)
+        {
+            webView.Source = new UrlWebViewSource { Url = lehed[4] };
+        }
+
+        private void Picker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (webView != null)
+            {
+                st.Children.Remove(webView);
+            }
+            webView = new WebView
+            {
+                Source = new UrlWebViewSource { Url = lehed[picker.SelectedIndex] },
+                VerticalOptions = LayoutOptions.FillAndExpand,
+            };
+            st.Children.Add(webView);
+        }
     }
 }

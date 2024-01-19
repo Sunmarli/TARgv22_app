@@ -14,10 +14,10 @@ namespace TARgv22_app
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page1 : ContentPage
     { List<ContentPage> pages = new List<ContentPage>()
-            { new EntryPage(),new BoxViewPage(), new TimerPage(), new  DateTimePage(), new StepperSliderPage(),new Valgusfoor(),new FrameGridPage(), new ImagePage()
+            { new EntryPage(),new BoxViewPage(), new TimerPage(), new  DateTimePage(), new StepperSliderPage(),new Valgusfoor(),new FrameGridPage(), new ImagePage(), new Picker_Page(), new  Table_Page(), new OmaBrowser()
 
             };
-        List<string> teksts = new List<string>() { "Ava Entry leht", "Ava Box leht", "Ava Timer leht","Ava Datetimer", "Ava StepperSlider", "Ava Valgusfoor","Ava FrameGrid", "Ava Image" };
+        List<string> teksts = new List<string>() { "Ava Entry leht", "Ava Box leht", "Ava Timer leht","Ava Datetimer", "Ava StepperSlider", "Ava Valgusfoor","Ava FrameGrid", "Ava Image","Picker Page","TablePage","oma browser2.0"};
         StackLayout st;
         public Page1()
         {
